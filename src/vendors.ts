@@ -11,3 +11,6 @@ import '@angularclass/hmr';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
+import 'materialize-css';
+import 'materialize-css/dist/css/materialize.css';
+import 'angular2-materialize';

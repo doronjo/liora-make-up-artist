@@ -1,8 +1,10 @@
 
 var resolve = require('path').resolve;
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var commonPlugin = new webpack.optimize.CommonsChunkPlugin({name:'commons',filename:'commons.js'});
+var commonPlugin = new webpack.optimize.CommonsChunkPlugin({name:'commons',filename:'js/commons.js'});
+var extractTextPlugin = new ExtractTextPlugin('css/style.css');
 
 module.exports = {
     context:resolve('src'),
@@ -12,12 +14,10 @@ module.exports = {
         vendors:'./vendors.ts'
     },
     output:{
-        path:resolve('build/js'),
-        publicPath:'/js',
-        filename:"[name].js"
+        path:resolve('build'),
+        publicPath:'/',
+        filename:"js/[name].js"
     },
-    plugins:[commonPlugin],
-
     devServer:{
         contentBase:'build'
     },
@@ -28,13 +28,33 @@ module.exports = {
             {
                 test:/\.ts$/,
                 exclude:/node_module/,
-                use:{loader:'awesome-typescript-loader'}
+                use:[{loader:'awesome-typescript-loader'},{loader:'angular2-template-loader'}]
+            },
+            {
+                test: /\.scss$/,
+                exclude:/node_module/,
+                use: ['raw-loader', 'sass-loader']
+            },
+            {
+                test:/\.css$/,
+                use :ExtractTextPlugin.extract({use:['css-loader']})
+            },
+            {
+                test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+                use: 'url-loader?limit=100000' ,
+            },
+            {
+                test: /\.html$/, 
+                use: ['raw-loader']
             }
         ]
     },
-
+    plugins:[
+        extractTextPlugin,
+        commonPlugin
+    ],
     resolve:{
-        extensions:['.js' ,'.ts']
+        extensions:['.js' ,'.ts', '.scss', '.html', '.css']
     }
     
 } 
