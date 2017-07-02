@@ -4,11 +4,12 @@
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports":true,
     "sourceMap": true,
     "noEmitHelpers": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
-    "lib": ["es2015", "dom"]
+    "lib": ["es2016", "dom"]
   },
   "compileOnSave": false,
   "buildOnSave": false,

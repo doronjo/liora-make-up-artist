@@ -5,6 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var commonPlugin = new webpack.optimize.CommonsChunkPlugin({name:'commons',filename:'js/commons.js'});
 var extractTextPlugin = new ExtractTextPlugin('css/style.css');
+var jqueryProviderPlugin =  new webpack.ProvidePlugin({'window.jQuery':'jquery', '$': 'jquery','jquery': 'jquery','jQuery': 'jquery',});
 
 module.exports = {
     context:resolve('src'),
@@ -46,12 +47,17 @@ module.exports = {
             {
                 test: /\.html$/, 
                 use: ['raw-loader']
-            }
+            },
+            {  
+                test: /vendor\/.+\.(jsx|js|ts)$/,
+                use: 'imports?jQuery=jquery,$=jquery,this=>window'
+            }   
         ]
     },
     plugins:[
         extractTextPlugin,
-        commonPlugin
+        commonPlugin,
+        jqueryProviderPlugin
     ],
     resolve:{
         extensions:['.js' ,'.ts', '.scss', '.html', '.css']
