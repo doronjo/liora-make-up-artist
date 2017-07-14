@@ -16,7 +16,7 @@ module.exports = {
     },
     output:{
         path:resolve('build'),
-        publicPath:'/',
+        publicPath:'./',
         filename:"js/[name].js"
     },
     devServer:{
@@ -34,15 +34,15 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude:/node_module/,
-                use: ['raw-loader', 'sass-loader']
+                use: ['css-to-string-loader','css-loader']
             },
             {
                 test:/\.css$/,
                 use :ExtractTextPlugin.extract({use:['css-loader']})
             },
             {
-                test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-                use: 'url-loader?limit=100000' ,
+                test: /.(png|jpg|jpeg|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+                use: {loader:'url-loader',options:{limit:100000000}} ,
             },
             {
                 test: /\.html$/, 
