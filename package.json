@@ -66,6 +66,7 @@
     "raw-loader": "0.5.1",
     "remap-istanbul": "^0.6.4",
     "rimraf": "^2.5.1",
+    "sass-flex-mixin": "^1.0.3",
     "sass-loader": "^6.0.1",
     "shelljs": "^0.7.0",
     "style-loader": "^0.13.0",

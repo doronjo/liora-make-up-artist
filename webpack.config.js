@@ -20,7 +20,8 @@ module.exports = {
         filename:"js/[name].js"
     },
     devServer:{
-        contentBase:'build'
+        contentBase:'build',
+        hot:true
     },
     watch:true,
      
@@ -34,7 +35,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude:/node_module/,
-                use: ['css-to-string-loader','css-loader']
+                use: ['css-to-string-loader','css-loader' , 'sass-loader']
             },
             {
                 test:/\.css$/,
@@ -57,7 +58,8 @@ module.exports = {
     plugins:[
         extractTextPlugin,
         commonPlugin,
-        jqueryProviderPlugin
+        jqueryProviderPlugin,
+        new webpack.HotModuleReplacementPlugin()
     ],
     resolve:{
         extensions:['.js' ,'.ts', '.scss', '.html', '.css']
