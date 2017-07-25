@@ -15,13 +15,18 @@ module.exports = {
         vendors:'./vendors.ts'
     },
     output:{
-        path:resolve('build'),
-        publicPath:'./',
+        path:resolve(__dirname,'build/'),
+        publicPath:'/',
         filename:"js/[name].js"
     },
     devServer:{
-        contentBase:'build',
-        hot:true
+        contentBase:__dirname + '/build',
+        port:8080,
+        host:'localhost',
+        watchContentBase: true,
+        stats:"errors-only",
+        hot:true,
+        open:true
     },
     watch:true,
      
@@ -59,7 +64,8 @@ module.exports = {
         extractTextPlugin,
         commonPlugin,
         jqueryProviderPlugin,
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, resolve(__dirname, '../src'))
     ],
     resolve:{
         extensions:['.js' ,'.ts', '.scss', '.html', '.css']
