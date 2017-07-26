@@ -14,3 +14,4 @@ import '@angularclass/hmr';
 import * as $ from 'jquery'
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.css';
+import 'ionicons/dist/css/ionicons.css';

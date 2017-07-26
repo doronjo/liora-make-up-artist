@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app.routing.module';
 import { MaterializeModule } from 'ng2-materialize';
 import { AppComponent } from './components/app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SocialsComponent } from './components/socials/socials.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -16,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     AppComponent,
     NavigationComponent,
+    FooterComponent,
+    SocialsComponent,
     HomeComponent
   ],
   bootstrap: [AppComponent]

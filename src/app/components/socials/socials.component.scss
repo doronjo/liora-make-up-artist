@@ -1,0 +1,51 @@
+@import '../../styles/common-style.scss';
+
+#app-socials{
+    ul{
+        -webkit-transform: rotate(90deg) translateZ(0);
+        -moz-transform: rotate(90deg) translateZ(0);
+        -ms-transform: rotate(90deg) translateZ(0);
+        -o-transform: rotate(90deg) translateZ(0);
+        transform: rotate(90deg) translateZ(0);
+        width: 409px;
+        height: 40px;
+        position: fixed;
+        z-index: 10;
+        top: 390px;
+        right: -117px;
+        li{
+            display: inline-block;
+            padding:0px 9px;
+             -webkit-transform: translateZ(0); 
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+             transform: translateZ(0); 
+            background: transparent;
+            cursor: pointer;
+            a{
+                font-size: 20px;
+                text-decoration: none;
+                color: #000;
+                padding-left: 10px;
+            }
+            i{
+                font-size: 20px;
+                 -webkit-transform: rotate(0deg) translateZ(0);
+                -moz-transform: rotate(0deg) translateZ(0);
+                -ms-transform: rotate(0deg) translateZ(0);
+                -o-transform: rotate(0deg) translateZ(0);
+                transform: rotate(0deg) translateZ(0);
+            }
+            &:hover{
+                background: #000;
+                a{
+                    color:#fff;
+                }
+                i{
+                    color:#fff;
+                }
+            }
+        }
+    }
+}

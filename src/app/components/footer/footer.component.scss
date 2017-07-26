@@ -1,0 +1,31 @@
+@import '../../styles/common-style.scss';
+
+#app-footer{
+    position: fixed;
+    z-index: 4;
+    bottom: 0;
+    padding: 0 80px 40px 80px;
+    a{
+        cursor: pointer;      
+        &.menuIsOpen{
+            color: #fff;
+        }
+    }
+}
+footer{
+    background-color: #000;
+    height: 350px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+    &.close{
+      bottom: -350px;   
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+    }
+}
+

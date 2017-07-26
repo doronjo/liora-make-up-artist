@@ -1,19 +1,26 @@
 @import '../../styles/flex.scss';
 
-.app-nav{
-    @include flexbox;
+#navigtion-comp{
     position: fixed;
     z-index: 10000; 
     right: 0; 
     left: 0;
-    background-color:transparent;
-    box-shadow: 0px 0 0 0;    
-    ul{      
-        li{
-            a{
-                color:#000;
-                cursor: pointer;
+    padding-top: 60px;
+    padding-bottom: 0;
+    padding-left: 80px;
+    padding-right: 80px;
+    vertical-align: middle;
+    .app-nav{
+        @include flexbox;
+        background-color:transparent;
+        box-shadow: 0px 0 0 0;    
+        ul{      
+            li{
+                a{
+                    color:#000;
+                    cursor: pointer;
+                }
             }
-        }
-    } 
-}  
+        } 
+    }  
+}
