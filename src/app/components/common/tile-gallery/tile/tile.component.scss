@@ -1,0 +1,100 @@
+.dj-tile{
+    width: 383px;
+    height: 284px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+    .dj-tile-img{
+        position: absolute;
+        top:0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+         -webkit-transition: all 1s; /* Safari */
+        transition: all 1s ease-in-out;
+    }
+    .dj-tile-info{
+        position: absolute;
+        top:0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.7);
+        opacity: 0;
+        -webkit-transition-delay: 0.2s;
+         -webkit-transition: all 0.3s; /* Safari */
+        transition: all 0.3s ease-out;
+        padding: 20px;
+        h3{
+            color: #fff;
+            transform: translate(-100px,0);
+            transition: all 0.5s ease-out;
+        }
+        p{
+            color: #fff;
+            transform: translate(0,300px);
+            transition: all 0.5s ease-out;
+        }
+        i{
+            color: #fff;
+            font-size: 25px;
+            position: absolute;
+            &.facebook{
+                bottom: 100px;
+                right: 40px;
+                 -webkit-transition-delay: 0.1s;
+                transform: translate(0,300px);
+                transition: all 0.5s ease-out;
+            }
+             &.instegram{
+                bottom: 60px;
+                right: 40px;
+                transform: translate(0,300px);
+                 -webkit-transition-delay: 0.05s;
+                transition: all 0.5s ease-out;
+            }
+        }
+    }
+    &:hover{
+
+        .dj-tile-info{
+            opacity: 1;
+           -webkit-transition: all 0.3s; /* Safari */
+            transition: all 0.3s ease-out;
+            h3{
+                    transform: translate(0,0);
+                    transition: all 0.5s ease-out;
+            }
+            p{
+                    transform: translate(0,0);
+                    transition: all 0.4s ease-out;
+                    -webkit-transition-delay: 0.1s;
+            }
+            i{
+                &.facebook{
+                     transform: translate(0,0);
+                    transition: all 0.4s ease-out;
+                    -webkit-transition-delay: 0.4s;
+                }
+                &.instegram{
+                     transform: translate(0,0);
+                    transition: all 0.4s ease-out;
+                    -webkit-transition-delay: 0.5s;
+                }
+
+            }
+            
+        }
+        .dj-tile-img{
+            transform: scale(1.3);
+         -webkit-transition: all 1s; /* Safari */
+        transition: all 1s ease-in-out;
+        }
+    }
+}

@@ -16,7 +16,7 @@ module.exports = {
     },
     output:{
         path:resolve(__dirname,'build/'),
-        publicPath:'/',
+        publicPath:'http://localhost:8080/',
         filename:"js/[name].js"
     },
     devServer:{
@@ -52,7 +52,7 @@ module.exports = {
             },
             {
                 test: /\.html$/, 
-                use: ['raw-loader']
+                use: ['html-loader']
             },
             {  
                 test: /vendor\/.+\.(jsx|js|ts)$/,

@@ -8,7 +8,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { SocialsComponent } from './components/socials/socials.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { MakeupComponent } from './components/makeup/makeup.component';
+import { DJTileComponent } from './components/common/tile-gallery/tile/tile.component';
+import { DJGalleryComponent } from './components/common/tile-gallery/gallery/gallery.component';
+import { DJGalleryService } from './components/common/tile-gallery/service/gallery.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -20,7 +23,13 @@ import { HomeComponent } from './components/home/home.component';
     NavigationComponent,
     FooterComponent,
     SocialsComponent,
-    HomeComponent
+    HomeComponent,
+    DJGalleryComponent,
+    DJTileComponent,
+    MakeupComponent
+  ],
+  providers:[
+    DJGalleryService
   ],
   bootstrap: [AppComponent]
 })
