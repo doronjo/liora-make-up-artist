@@ -4,8 +4,8 @@
   "license": "MIT",
   "main":"server.js",
   "scripts": {
-    "server": "webpack-dev-server",
-    "start": "npm run server"
+    "serve": "webpack-dev-server",
+    "start": "node server.js"
   },
   "dependencies": {
     "@angular/common": "4.0.0",
