@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.0.0",
   "license": "MIT",
+  "main":"server.js",
   "scripts": {
     "server": "webpack-dev-server",
     "start": "npm run server"
