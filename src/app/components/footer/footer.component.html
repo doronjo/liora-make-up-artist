@@ -1,4 +1,22 @@
  <div id="app-footer">
         <a class="icon  ion-ios-menu" [ngClass]="{'menuIsOpen': isMenuOpen}" (click)="toggleMenu()"></a>
 </div>
-<footer [ngClass]="{'close': !isMenuOpen}"></footer>
+<footer [ngClass]="{'close': !isMenuOpen}">
+        <div class="section footer-left">
+                <ul>
+                    <li>Navigation</li>
+                    <li><a routerLink="/home">Home</a></li>
+                    <li><a routerLink="/makeup">MakeUp</a></li>
+                    <li><a>About Me</a></li>       
+                </ul>
+        </div>
+        <div class="section footer-center">
+                <img src='../../../assets/logo-transparent2.png' />
+        </div>
+        <div class="section footer-right">
+                <h5>צור קשר</h5>
+                <p>ליאורה ג'וסף מאפרת אמנתית </p>
+                <p>טלפון: 05469766995</p>
+                <P style="direction:rtl">דוא"ל: liorakat@gmail.com</P>
+        </div>
+</footer>

@@ -23,7 +23,9 @@
              transform: translateZ(0); 
             background: transparent;
             cursor: pointer;
+            border-top: 3px solid transparent;
             a{
+                font-family: 'Poiret One', cursive;
                 font-size: 20px;
                 text-decoration: none;
                 color: #000;
@@ -38,7 +40,10 @@
                 transform: rotate(0deg) translateZ(0);
             }
             &:hover{
+                -webkit-transition: all 0.4s; /* Safari */
+                transition: all 0.4s;
                 background: #000;
+                border-top:3px solid #e469a8;
                 a{
                     color:#fff;
                 }

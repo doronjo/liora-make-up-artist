@@ -1,10 +1,9 @@
-<div id="navigtion-comp">
+<div id="navigtion-comp" [ngClass]="{'scroll-over' :isScrollOver}">
     <nav class="app-nav">
         <i class="main-logo"></i>
         <ul>
-            <li><a routerLink="/home">Logo</a></li>
+            <li><a routerLink="/home">Home</a></li>
             <li><a routerLink="/makeup">MakeUp</a></li>
-            <li><a>Sweets</a></li>
             <li><a>About Me</a></li>
         </ul>    
     </nav>

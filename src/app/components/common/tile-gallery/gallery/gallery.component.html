@@ -7,4 +7,11 @@
         <img src="{{selectedItem.src}}" />
         <article>{{selectedItem.description}}</article>
     </div>
+    <div class="gallery-controls">
+        <div>
+            <i class="ion-ios-arrow-back-outline" (click)="back($event)"></i>
+            <i class="ion-ios-arrow-forward-outline" (click)="forward($event)"></i>
+        </div>
+            <i class="ion-ios-close" (click)="closeGalleryPopup()"></i>
+    </div>
 </div>

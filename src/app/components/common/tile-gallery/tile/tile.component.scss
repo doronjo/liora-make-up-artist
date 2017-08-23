@@ -4,7 +4,7 @@
     display: block;
     position: relative;
     overflow: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     .dj-tile-img{
         position: absolute;
         top:0;
@@ -35,11 +35,14 @@
             color: #fff;
             transform: translate(-100px,0);
             transition: all 0.5s ease-out;
+            font-family: 'Poiret One', cursive;
+            font-weight: 700;
         }
         p{
             color: #fff;
             transform: translate(0,300px);
             transition: all 0.5s ease-out;
+            font-family: 'Poiret One', cursive;
         }
         i{
             color: #fff;

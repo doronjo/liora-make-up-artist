@@ -7,6 +7,7 @@
 .dj-gallery-popup{
     @include flexbox;
     position: fixed;
+    z-index: 110000000000000;
     top:0;
     left: 0;
     right: 0;
@@ -15,23 +16,50 @@
     background-color: rgba(0, 0, 0, 0.7);
     transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
     @include justify-content(center);
+    .gallery-controls{
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        position: absolute;
+        padding: 0 52px;
+        bottom:0;
+        right:0;
+        left: 0;
+        i{
+            color: #fff;
+            padding: 5px 20px;
+            font-size: 50px;
+            cursor: pointer;
+            text-shadow: 0px 0px 8px #ffffff;
+            &:hover{
+                text-shadow: 0px 0px 22px #ffffff;
+            }
+        }
+    }
     &.open{
             transform: translate(0,0);
             transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     .dj-gallery-popup-wrapper{
         max-width: 79%;
-        height: 85%;
+        height: 72%;
         text-align: center;
         position: relative;
         @include align-self(center);
         h3{
             position: absolute;
-            top: -61px;
-            left: -88px;
+            bottom: 0px;
+            left: -7px;
             color: #fff;
             padding: 10px;
             margin: 0;
+            transform: rotate(-90deg);
+            transform-origin: bottom left;
+            text-align: right;
+            text-shadow: 0px 0px 8px #ffffff;
+            font-family: 'Poiret One', cursive;
+            font-weight: bold;
+            font-size: 60px;
         }
         img{
             max-width:100%;
@@ -40,10 +68,15 @@
         }
         article{
             position: absolute;
-            bottom: -61px;
-            right: -88px;
+            bottom: -57px;
+            left: 16px;
             color: #fff;
             margin: 0;
+            font-size: 17px;
+            text-shadow: 0px 0px 8px #ffffff;
+            font-family: 'Poiret One', cursive;
+            font-weight: bold;
+            font-size: 30px;
         }
     }
 }

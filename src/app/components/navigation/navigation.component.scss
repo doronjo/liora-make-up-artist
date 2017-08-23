@@ -10,6 +10,14 @@
     padding-left: 80px;
     padding-right: 80px;
     vertical-align: middle;
+    transition: all 0.5s ease-out;
+    background: transparent;
+    &.scroll-over{
+        padding: 0;
+        background-color:rgba(255, 255, 255, 1);
+        border-bottom:1px solid #dedede;
+        transition: all 0.5s ease-out;
+    }
     .app-nav{
         @include flexbox;
         background-color:transparent;
@@ -19,8 +27,20 @@
                 a{
                     color:#000;
                     cursor: pointer;
+                    font-family: 'Poiret One', cursive;
+                    font-size: 20px;
+                    font-weight: 700;
+                    &:hover{
+                         border-bottom:  3px solid rgb(228, 105, 168);
+                         color: #fff;
+                         background: #000;
+                    }
                 }
+
             }
         } 
     }  
+    #logo{
+        background: url('../../../assets/logo-transparent2.png') no-repeat center center;
+    }
 }
