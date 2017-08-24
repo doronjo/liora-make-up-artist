@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "webpack-dev-server",
     "start": "node server.js",
-    "postinstall":"node node_modules/webpack/bin/webpack.js"
+    "postinstall":"webpack"
   },
   "dependencies": {
     "@angular/common": "4.0.0",
