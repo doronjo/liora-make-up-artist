@@ -6,17 +6,21 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonPlugin = new webpack.optimize.CommonsChunkPlugin({name:'commons',filename:'js/commons.js'});
 var extractTextPlugin = new ExtractTextPlugin('css/style.css');
 var jqueryProviderPlugin =  new webpack.ProvidePlugin({'window.jQuery':'jquery', '$': 'jquery','jquery': 'jquery','jQuery': 'jquery',});
+var htmlWebpackAlterAssetPlugin = require('html-webpack-alter-asset-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context:resolve('src'),
     entry:{
-        main:"./main.ts" ,
-        polyfills: "./polyfills.ts" ,
-        vendors:'./vendors.ts'
+        polyfills: './polyfills.ts' ,
+        vendors:'./vendors.ts',
+        main:"./main.ts" 
+        
     },
     output:{
         path:resolve(__dirname,'build/'),
-        publicPath:'http://localhost:8080/',
+        publicPath:'/',
         filename:"js/[name].js"
     },
     devServer:{
@@ -28,8 +32,7 @@ module.exports = {
         hot:true,
         open:true
     },
-    watch:true,
-     
+    watch:false,
     module:{
         rules:[
             {
@@ -65,7 +68,15 @@ module.exports = {
         commonPlugin,
         jqueryProviderPlugin,
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, resolve(__dirname, '../src'))
+        new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, resolve(__dirname, '../src')),
+        new HtmlWebpackPlugin({title: 'Custom template',template: 'index.ejs' ,chunksSortMode :'dependency' ,
+        injectAlter: {
+                js: { 
+                    keys: ['commons', 'vendor', 'polyfills', 'main' ] 
+                }
+         }}),
+        new htmlWebpackAlterAssetPlugin(),
+        new CopyWebpackPlugin([{from:'assets', to:'assets'}])
     ],
     resolve:{
         extensions:['.js' ,'.ts', '.scss', '.html', '.css']
