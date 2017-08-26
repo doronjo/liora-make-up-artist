@@ -1,3 +1,5 @@
+@import '../../../../styles/spinner.scss';
+@import '../../../../styles/flex.scss';
 .dj-tile{
     width: 383px;
     height: 284px;
@@ -5,8 +7,29 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 30px;
+    .dj-tile-spinner{
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+        background: #fff;
+        &.spinner-off{
+            opacity: 0;
+            -webkit-transition: all 1s; /* Safari */
+            transition: all 1s;
+        }
+        .spinner{
+            @extend .dizzy-gillespie;
+        }
+    }
     .dj-tile-img{
         position: absolute;
+        z-index: 2;
         top:0;
         right: 0;
         width: 100%;
@@ -24,6 +47,7 @@
         top:0;
         right: 0;
         left: 0;
+        z-index: 5;
         bottom: 0;
         background-color: rgba(0,0,0,0.7);
         opacity: 0;

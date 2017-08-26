@@ -12,9 +12,11 @@ export class DJTileComponent implements OnInit {
   @Input() description:string;
   @Input() title:string;
   public   id:string;
+  public   isLoaded:boolean;
   constructor(private _djGalleryService : DJGalleryService){
     this.src = '';
     this.id = this.generateUniqID();
+    this.isLoaded = false;
   }
 
   public getSrc(){
@@ -22,6 +24,7 @@ export class DJTileComponent implements OnInit {
   }
   public ngOnInit(){
     console.log(this.src);
+    this.loadImage(this.src);
   }
 
   public itemSelected(){
@@ -34,6 +37,17 @@ export class DJTileComponent implements OnInit {
     this._djGalleryService.galleryItemSelected(galleryItem);
   }
 
+  public onImageEndLoading(){
+    this.isLoaded = true;
+  }
+
+  public loadImage(src){
+    var img = new Image();
+    img.onload = ()=>{
+      this.isLoaded = true;
+    }
+    img.src = src;
+  }
   private generateUniqID(){
 
     var ts = new Date().toString();

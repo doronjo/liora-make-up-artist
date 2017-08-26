@@ -1,5 +1,8 @@
 <div class="dj-tile" (click)="itemSelected()">
-    <div class="dj-tile-img" [ngStyle]="{'background':'url(' + src + ') center center','background-size':'cover'}"></div>
+    <div class="dj-tile-spinner" [ngClass]="{'spinner-off': isLoaded}">
+        <div class="spinner"></div>
+    </div>
+    <div class="dj-tile-img" *ngIf = "isLoaded" [ngStyle]="{'background':'url(' + src + ') center center','background-size':'cover'}"></div>
     <div class="dj-tile-info">
             <h3>{{title}}</h3>
             <p>{{description}}</p>

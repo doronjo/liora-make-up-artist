@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "serve": "webpack-dev-server",
+    "scerve": "webpack-dev-server",
     "start": "node server.js",
     "postinstall":"webpack"
   },
